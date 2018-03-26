@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name = "format-detection" content = "telephone=no" />
-  <link rel="stylesheet" href="./css/normalize.css">
+  <!-- <link rel="stylesheet" href="./css/normalize.css"> -->
   <link rel="stylesheet" href="./css/style.css">
   <title>ТОП-5 полезных функций Excel для анализа данных и составления отчётов</title>
 </head>
@@ -13,9 +13,9 @@
     <div class="header__wrapper wrapper">
       <div class="header__menu menu">
         <div class="menu__button">
-          <span class="menu__button"></span>
-          <span class="menu__button"></span>
-          <span class="menu__button"></span>
+          <span class="menu__button-item menu__button-item--first"></span>
+          <span class="menu__button-item menu__button-item--center"></span>
+          <span class="menu__button-item menu__button-item--last"></span>
         </div>
         <div class="menu__ul">
           <div class="menu__item">
@@ -38,28 +38,41 @@
       <a href="http://www.cpobr.ru/" class="header__logo" target="_blank">
         <img src="./img/logo.png">
       </a>
-      <a href="tel:74959918747" class="header__phone">+7 (495) 991-87-47</a></div>
+      <div class="header__phone">
+      <a href="tel:74959918747" class="header__phone-link">+ 7 495 991-87-47</a>
     </div>
   </header>
   <main class="main">
-    <div class="first">
+    <section class="first">
+      <div class="wrapper">
       <h1 class="main-title">Услуги письменного и устного перевода любой сложности 
         <span>в Москве, по России и всему миру!</span>
       </h1>
       <div class="first__form form">
         <h2 class="form__title">Закажите тестовый перевод бесплатно!</h2>
-        <form method="POST" action="test.php">
-          <input class="form__name form__item" name="name" type="text" placeholder="Имя">
-          <input class="form__mail form__item" name="email" type="text" placeholder="E-mail">
-          <input class="form__phone form__item" name="phone" type="text" placeholder="Телефон">
+        <form class="form__wrapper" method="POST" action="test.php">
+          <input class="form__name form__item" name="name" type="text" placeholder="Имя" required>
+          <input class="form__mail form__item" name="email" type="text" placeholder="E-mail" required>
+          <input class="form__phone form__item" name="phone" type="text" placeholder="Телефон" required>
           <input class="form__submit form__item" type="submit" value="Заказать">
-          <div class="form__item form__checkbox">
-            <input id="isAgree" class="form__input" checked="checked" name="agree" type="checkbox">
+          <div class="form__checkbox">
+            <input id="isAgree" class="form__input" checked="checked" name="agree" type="checkbox" required>
             <label for="isAgree" class="form__label">Я даю согласие на обработку моих персональных данных</label>
           </div>
         </form>
       </div>
+    </section>
+    <section class="languages">
+      <div class="languages__wrapper wrapper">
+      <h2 class="languages__title">Языки перевода</h2>
+      <div class="languages__item">Английский</div>
+      <div class="languages__item">Французский</div>
+      <div class="languages__item">Итальянский</div>
+      <div class="languages__item">Китайский</div>
+      <div class="languages__item">Немецкий</div>
+      <div class="languages__subtext">*мы также переводим на множество других языков</div>
     </div>
+    </section>
   </main>
   <footer class="footer">
     <div class="container">
