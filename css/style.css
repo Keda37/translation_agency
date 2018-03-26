@@ -523,6 +523,14 @@ body {
   width: 330px;
 }
 
+.services__list-column:first-child {
+  margin-right: auto;
+}
+
+.services__list-column:last-child {
+  margin-left: auto;
+}
+
 .services__list-ul {
   list-style: none;
   padding: 0;
@@ -674,6 +682,7 @@ body {
   right: 0;
   height: 876px;
   background: url("../img/about-bg.jpg") center no-repeat;
+  background-size: cover;
 }
 
 .about__title {
@@ -698,6 +707,9 @@ body {
 }
 
 .about__item {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -933,12 +945,6 @@ body {
   line-height: 20px;
   text-transform: uppercase;
   text-align: center;
-  background-image: -webkit-linear-gradient(326deg, #a12d47 0%, #20205c 100%);
-  background-image: -o-linear-gradient(326deg, #a12d47 0%, #20205c 100%);
-  background-image: linear-gradient(124deg, #a12d47 0%, #20205c 100%);
-  color: black;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   height: 100px;
 }
 
@@ -1057,6 +1063,7 @@ body {
   content: '';
   z-index: -1;
   background: url(../img/reviews-bg.jpg) center no-repeat;
+  background-size: cover;
   position: absolute;
   left: 0;
   right: 0;
@@ -1189,11 +1196,6 @@ body {
   font-size: 36px;
   font-weight: 700;
   text-align: center;
-  background-image: -webkit-linear-gradient(326deg, #a12d47 0%, #20205c 100%);
-  background-image: -o-linear-gradient(326deg, #a12d47 0%, #20205c 100%);
-  background-image: linear-gradient(124deg, #a12d47 0%, #20205c 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .last-form__wrapper {
@@ -1510,6 +1512,23 @@ body {
 
 .footer__contacts-link a:hover {
   opacity: .6;
+}
+
+@supports (-webkit-text-fill-color: transparent) {
+  .table-top-th {
+    background-image: -webkit-linear-gradient(326deg, #a12d47 0%, #20205c 100%);
+    background-image: -o-linear-gradient(326deg, #a12d47 0%, #20205c 100%);
+    background-image: linear-gradient(124deg, #a12d47 0%, #20205c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .last-form__title {
+    background-image: -webkit-linear-gradient(326deg, #a12d47 0%, #20205c 100%);
+    background-image: -o-linear-gradient(326deg, #a12d47 0%, #20205c 100%);
+    background-image: linear-gradient(124deg, #a12d47 0%, #20205c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
 .modal {
