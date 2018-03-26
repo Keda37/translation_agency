@@ -224,7 +224,14 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: none;
+  opacity: 0;
+  -webkit-transform: translateX(-200px);
+  -ms-transform: translateX(-200px);
+  transform: translateX(-200px);
+  -webkit-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  visibility: hidden;
 }
 
 .menu__link {
@@ -274,6 +281,11 @@ body {
 
 .menu input:checked ~ .menu__ul {
   display: block;
+  opacity: 1;
+  -webkit-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  transform: translateX(0px);
+  visibility: visible;
 }
 
 .menu input:checked ~ .menu__button .menu__button-item--center {
