@@ -327,6 +327,147 @@ body {
   color: #a5a5a5;
 }
 
+.languages {
+  margin-top: 90px;
+}
+
+.languages__wrapper {
+  border-radius: 10px;
+  background: #FFF;
+  padding-top: 58px;
+  padding-bottom: 63px;
+}
+
+.languages__title {
+  color: #412b53;
+  font-size: 40px;
+  font-weight: 700;
+  width: 100%;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.languages__item {
+  width: 170px;
+  text-align: center;
+  margin-left: 15px;
+  margin-right: 15px;
+  position: relative;
+  padding-top: 85px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #000;
+}
+
+.languages__item-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.languages__item:hover::before {
+  -webkit-animation-name: shake;
+  animation-name: shake;
+  -webkit-animation-duration: 0.8s;
+  animation-duration: 0.8s;
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+
+.languages__item::before {
+  content: '';
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 100%;
+}
+
+.languages__item--eng::before {
+  background: url("../img/en.png") center no-repeat;
+}
+
+.languages__item--fr::before {
+  background: url("../img/fr.png") center no-repeat;
+}
+
+.languages__item--it::before {
+  background: url("../img/it.png") center no-repeat;
+}
+
+.languages__item--ch::before {
+  background: url("../img/ch.png") center no-repeat;
+}
+
+.languages__item--de::before {
+  background: url("../img/de.png") center no-repeat;
+}
+
+.languages__subtext {
+  font-size: 14px;
+  font-weight: 400;
+  color: #000;
+  text-align: center;
+  margin-top: 77px;
+}
+
+@-webkit-keyframes shake {
+  0% {
+    transform:scale(1) {
+    }
+  }
+  10%, 20% {
+    -webkit-transform: scale(0.99) rotate(-1deg);
+    transform: scale(0.99) rotate(-1deg);
+  }
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale(1.01) rotate(1deg);
+    transform: scale(1.01) rotate(1deg);
+  }
+  40%, 60%, 80% {
+    -webkit-transform: scale(1.01) rotate(-1deg);
+    transform: scale(1.01) rotate(-1deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotate(0);
+    transform: scale(1) rotate(0);
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform:scale(1) {
+    }
+  }
+  10%, 20% {
+    -webkit-transform: scale(0.99) rotate(-1deg);
+    transform: scale(0.99) rotate(-1deg);
+  }
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale(1.01) rotate(1deg);
+    transform: scale(1.01) rotate(1deg);
+  }
+  40%, 60%, 80% {
+    -webkit-transform: scale(1.01) rotate(-1deg);
+    transform: scale(1.01) rotate(-1deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotate(0);
+    transform: scale(1) rotate(0);
+  }
+}
+
 .modal {
   position: fixed;
   top: 0;

@@ -39,77 +39,79 @@
         <img src="./img/logo.png">
       </a>
       <div class="header__phone">
-      <a href="tel:74959918747" class="header__phone-link">+ 7 495 991-87-47</a>
-    </div>
-  </header>
-  <main class="main">
-    <section class="first">
-      <div class="wrapper">
-      <h1 class="main-title">Услуги письменного и устного перевода любой сложности 
-        <span>в Москве, по России и всему миру!</span>
-      </h1>
-      <div class="first__form form">
-        <h2 class="form__title">Закажите тестовый перевод бесплатно!</h2>
-        <form class="form__wrapper" method="POST" action="test.php">
-          <input class="form__name form__item" name="name" type="text" placeholder="Имя" required>
-          <input class="form__mail form__item" name="email" type="text" placeholder="E-mail" required>
-          <input class="form__phone form__item" name="phone" type="text" placeholder="Телефон" required>
-          <input class="form__submit form__item" type="submit" value="Заказать">
-          <div class="form__checkbox">
-            <input id="isAgree" class="form__input" checked="checked" name="agree" type="checkbox" required>
-            <label for="isAgree" class="form__label">Я даю согласие на обработку моих персональных данных</label>
-          </div>
-        </form>
+        <a href="tel:74959918747" class="header__phone-link">+ 7 495 991-87-47</a>
       </div>
-    </section>
-    <section class="languages">
-      <div class="languages__wrapper wrapper">
-      <h2 class="languages__title">Языки перевода</h2>
-      <div class="languages__item">Английский</div>
-      <div class="languages__item">Французский</div>
-      <div class="languages__item">Итальянский</div>
-      <div class="languages__item">Китайский</div>
-      <div class="languages__item">Немецкий</div>
-      <div class="languages__subtext">*мы также переводим на множество других языков</div>
-    </div>
-    </section>
-  </main>
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__row">
-        <a href="http://www.tehnoprogress.ru/" class="footer__logo" target="_blank"><img src="./img/logo-footer.png" alt=""></a>
-        <div class="footer__contacts">
-          <div class="footer__contacts-title">
-            Центр профессионального образования «ТехноПрогресс»
+    </header>
+    <main class="main">
+      <section class="first">
+        <div class="wrapper">
+          <h1 class="main-title">Услуги письменного и устного перевода любой сложности 
+            <span>в Москве, по России и всему миру!</span>
+          </h1>
+          <div class="first__form form">
+            <h2 class="form__title">Закажите тестовый перевод бесплатно!</h2>
+            <form class="form__wrapper" method="POST" action="test.php">
+              <input class="form__name form__item" name="name" type="text" placeholder="Имя" required>
+              <input class="form__mail form__item" name="email" type="text" placeholder="E-mail" required>
+              <input class="form__phone form__item" name="phone" type="text" placeholder="Телефон" required>
+              <input class="form__submit form__item" type="submit" value="Заказать">
+              <div class="form__checkbox">
+                <input id="isAgree" class="form__input" checked="checked" name="agree" type="checkbox" required>
+                <label for="isAgree" class="form__label">Я даю согласие на обработку моих персональных данных</label>
+              </div>
+            </form>
           </div>
-          <a href="tel:74951044908" class="footer__contacts-phone">+7 (495) 104-49-08</a>
-          <div class="footer__contacts-link">
-            <a href="https://www.facebook.com/tehnoprogress/" target="_blank">
-            </a>
-            <a href="https://www.youtube.com/user/TechnoProgress/" target="_blank">
-            </a>
+        </section>
+        <section class="languages wrapper">
+          <div class="languages__wrapper">
+            <h2 class="languages__title">Языки перевода</h2>
+            <div class="languages__item-wrapper">
+              <div class="languages__item languages__item--eng">Английский</div>
+              <div class="languages__item languages__item--fr">Французский</div>
+              <div class="languages__item languages__item--it">Итальянский</div>
+              <div class="languages__item languages__item--ch">Китайский</div>
+              <div class="languages__item languages__item--de">Немецкий</div>
+            </div>
+            <div class="languages__subtext">*мы также переводим на множество других языков</div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="container">
+          <div class="footer__row">
+            <a href="http://www.tehnoprogress.ru/" class="footer__logo" target="_blank"><img src="./img/logo-footer.png" alt=""></a>
+            <div class="footer__contacts">
+              <div class="footer__contacts-title">
+                Центр профессионального образования «ТехноПрогресс»
+              </div>
+              <a href="tel:74951044908" class="footer__contacts-phone">+7 (495) 104-49-08</a>
+              <div class="footer__contacts-link">
+                <a href="https://www.facebook.com/tehnoprogress/" target="_blank">
+                </a>
+                <a href="https://www.youtube.com/user/TechnoProgress/" target="_blank">
+                </a>
+              </div>
+            </div>
           </div>
         </div>
+      </footer>
+      <div class="modal fade">
+        <div class="modal__wrapper">
+          <div class="modal__wrapper-close modal-close">+</div>
+          <h3 class="modal__title">
+            Спасибо, <br/>Ваша заявка принята!
+          </h3>
+          <div class="modal__back modal-close">Вернуться на главную</div>
+        </div>
       </div>
-    </div>
-  </footer>
-  <div class="modal fade">
-    <div class="modal__wrapper">
-      <div class="modal__wrapper-close modal-close">+</div>
-      <h3 class="modal__title">
-        Спасибо, <br/>Ваша заявка принята!
-      </h3>
-      <div class="modal__back modal-close">Вернуться на главную</div>
-    </div>
-  </div>
 
 
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="./js/jquery-3.3.1.min.js">\x3C/script>')</script>
-  <script src="./js/slick.min.js"></script>
-  <script src="./js/script.js"></script>
-</body>
-</html>
+      <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="./js/jquery-3.3.1.min.js">\x3C/script>')</script>
+      <script src="./js/slick.min.js"></script>
+      <script src="./js/script.js"></script>
+    </body>
+    </html>
