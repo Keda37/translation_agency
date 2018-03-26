@@ -39,16 +39,16 @@
     }
   }
   10%, 20% {
-    -webkit-transform: scale(0.99) rotate(-1deg);
-    transform: scale(0.99) rotate(-1deg);
+    -webkit-transform: scale(0.95) rotate(-3deg);
+    transform: scale(0.95) rotate(-3deg);
   }
   30%, 50%, 70%, 90% {
-    -webkit-transform: scale(1.01) rotate(1deg);
-    transform: scale(1.01) rotate(1deg);
+    -webkit-transform: scale(1.05) rotate(3deg);
+    transform: scale(1.05) rotate(3deg);
   }
   40%, 60%, 80% {
-    -webkit-transform: scale(1.01) rotate(-1deg);
-    transform: scale(1.01) rotate(-1deg);
+    -webkit-transform: scale(1.05) rotate(-3deg);
+    transform: scale(1.05) rotate(-3deg);
   }
   100% {
     -webkit-transform: scale(1) rotate(0);
@@ -62,16 +62,16 @@
     }
   }
   10%, 20% {
-    -webkit-transform: scale(0.99) rotate(-1deg);
-    transform: scale(0.99) rotate(-1deg);
+    -webkit-transform: scale(0.95) rotate(-3deg);
+    transform: scale(0.95) rotate(-3deg);
   }
   30%, 50%, 70%, 90% {
-    -webkit-transform: scale(1.01) rotate(1deg);
-    transform: scale(1.01) rotate(1deg);
+    -webkit-transform: scale(1.05) rotate(3deg);
+    transform: scale(1.05) rotate(3deg);
   }
   40%, 60%, 80% {
-    -webkit-transform: scale(1.01) rotate(-1deg);
-    transform: scale(1.01) rotate(-1deg);
+    -webkit-transform: scale(1.05) rotate(-3deg);
+    transform: scale(1.05) rotate(-3deg);
   }
   100% {
     -webkit-transform: scale(1) rotate(0);
