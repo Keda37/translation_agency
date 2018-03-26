@@ -190,6 +190,9 @@ body {
   position: relative;
   left: -15px;
   top: -10px;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .menu__button-item {
@@ -211,24 +214,8 @@ body {
   transition: width 0.3s ease-in-out;
 }
 
-.menu__button:hover .menu__button-item--center {
-  width: 0;
-}
-
-.menu__button:hover .menu__button-item--first {
-  -webkit-transform: rotate(135deg);
-  -ms-transform: rotate(135deg);
-  transform: rotate(135deg);
-  position: relative;
-  top: 10px;
-}
-
-.menu__button:hover .menu__button-item--last {
-  -webkit-transform: rotate(-135deg);
-  -ms-transform: rotate(-135deg);
-  transform: rotate(-135deg);
-  position: relative;
-  bottom: 10px;
+.menu__button:hover {
+  opacity: 0.7;
 }
 
 .menu__ul {
@@ -237,6 +224,7 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: none;
 }
 
 .menu__link {
@@ -266,6 +254,46 @@ body {
 
 .menu__link:hover::before {
   opacity: 1;
+}
+
+.menu input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  left: 50%;
+  top: 100%;
+}
+
+.menu input:checked ~ .menu__ul {
+  display: block;
+}
+
+.menu input:checked ~ .menu__button .menu__button-item--center {
+  width: 0;
+}
+
+.menu input:checked ~ .menu__button .menu__button-item--first {
+  -webkit-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg);
+  position: relative;
+  top: 10px;
+}
+
+.menu input:checked ~ .menu__button .menu__button-item--last {
+  -webkit-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+  position: relative;
+  bottom: 10px;
 }
 
 .main-title {
@@ -468,7 +496,7 @@ body {
 }
 
 .services {
-  margin-top: 50px;
+  padding-top: 50px;
 }
 
 .services__title {
@@ -870,7 +898,7 @@ body {
 }
 
 .rate {
-  margin-top: 80px;
+  padding-top: 80px;
 }
 
 .rate__title {
@@ -1189,9 +1217,12 @@ body {
 }
 
 .last-form {
+  padding-top: 105px;
+}
+
+.last-form__cont {
   background: #FFF;
   border-radius: 10px;
-  margin-top: 106px;
   padding-top: 65px;
   padding-bottom: 33px;
 }
