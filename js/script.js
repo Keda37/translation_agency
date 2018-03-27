@@ -69,16 +69,16 @@ $(document).mouseup(function (e){ // событие клика по веб-до�
 
 // добавление имени файла при загрузке в форму
 $('.js-file-input').on('change', function() {
-    $('.js-file-label').text(this.files[0].name);
+	$('.js-file-label').text(this.files[0].name);
 });
 
 
 $('.js-reviews__slider').slick({
-  infinite: false,
-  slidesToShow: 1,
-  arrows: true,
-  fade: true,
-  cssEase: 'linear',
+	infinite: false,
+	slidesToShow: 1,
+	arrows: true,
+	fade: true,
+	cssEase: 'linear',
 });
 
 $('.js-reviews__slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
@@ -86,7 +86,16 @@ $('.js-reviews__slider').on('beforeChange', function(event, slick, currentSlide,
 	$('[data-slide=' + nextSlide + ']').addClass('active-slide');
 });
 
+$('.js-slide-button').click(function() {
+	var currentSlide = $('.js-reviews__slider').slick('slickCurrentSlide');
+	var slideCounter = $(this).attr('data-slide');
+	if (currentSlide != slideCounter) {
+		$('[data-slide]').removeClass('active-slide');
+		$(this).addClass('active-slide');
+		$('.js-reviews__slider').slick('slickGoTo', slideCounter, false);
+	}
 
+});
 
 
 
