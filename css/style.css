@@ -1292,9 +1292,8 @@ body {
   margin-top: 28px;
   padding-left: 150px;
   padding-right: 150px;
-  padding-top: 80px;
-  padding-bottom: 40px;
   position: relative;
+  height: 265px;
 }
 
 .reviews__item {
@@ -1303,7 +1302,6 @@ body {
   color: white;
   font-size: 14px;
   font-weight: 300;
-  margin-bottom: 40px;
   outline: thin;
 }
 
@@ -1312,9 +1310,13 @@ body {
   position: absolute;
   width: 79px;
   height: 69px;
-  top: 3px;
+  top: 82px;
   left: 10px;
   background: url("../img/review-icon.png") center no-repeat;
+}
+
+.reviews__text {
+  min-height: 48px;
 }
 
 .reviews__name {
@@ -1844,14 +1846,14 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
-.reviews__logo-item.slick-current {
+.reviews__logo-item.active-slide {
   opacity: 1;
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
 }
 
-.reviews__logo-item.slick-current img {
+.reviews__logo-item.active-slide img {
   -webkit-filter: drop-shadow(1px 0px 0px #fff);
   filter: drop-shadow(1px 0px 0px #fff);
 }
@@ -1866,14 +1868,23 @@ body {
   cursor: pointer;
   border: none;
   outline: none;
-  -webkit-transition: opacity 0.3s ease-in-out;
-  -o-transition: opacity 0.3s ease-in-out;
-  transition: opacity 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   text-indent: -9999px;
 }
 
-.slick-prev:hover {
+.slick-prev.slick-disabled {
   opacity: .3;
+  cursor: default;
+}
+
+.slick-prev.slick-disabled:hover {
+  background-position: 50% 50%;
+}
+
+.slick-prev:hover {
+  background-position: 45% 50%;
 }
 
 .slick-next {
@@ -1886,14 +1897,37 @@ body {
   border: none;
   outline: none;
   cursor: pointer;
-  -webkit-transition: opacity 0.3s ease-in-out;
-  -o-transition: opacity 0.3s ease-in-out;
-  transition: opacity 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   text-indent: -9999px;
 }
 
-.slick-next:hover {
+.slick-next.slick-disabled {
   opacity: .3;
+  cursor: default;
+}
+
+.slick-next.slick-disabled:hover {
+  background-position: 50% 50%;
+}
+
+.slick-next:hover {
+  background-position: 55% 50%;
+}
+
+.reviews__item.slick-slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 265px;
 }
 
 /*# sourceMappingURL=style.css.map */
