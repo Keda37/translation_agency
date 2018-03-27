@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name = "format-detection" content = "telephone=no" />
-  <!-- <link rel="stylesheet" href="./css/normalize.css"> -->
+  <link rel="stylesheet" href="./css/normalize.css">
   <link rel="stylesheet" href="./css/style.css">
   <title>Услуги письменного и устного перевода любой сложности в Москве, по России и всему миру!</title>
 </head>
-<body>
-  <header class="header">
+<body class="body">
+  <header class="header" id="header">
     <div class="header__wrapper wrapper">
       <div class="header__menu menu">
         <input type="checkbox" id="nav-trigger" class="nav-trigger" />
@@ -20,25 +20,25 @@
         </label>
         <div class="menu__ul">
           <div class="menu__item">
-            <a href="#last-form" class="menu__link">Оставить заявку</a>
+            <a href="#last-form" class="menu__link js-scroll-el">Оставить заявку</a>
           </div>
           <div class="menu__item">
-            <a href="#services" class="menu__link">Наши услуги</a>
+            <a href="#services" class="menu__link js-scroll-el">Наши услуги</a>
           </div>
           <div class="menu__item">
-            <a href="#rate" class="menu__link">Тарифы</a>
+            <a href="#rate" class="menu__link js-scroll-el">Тарифы</a>
           </div>
           <div class="menu__item">
-            <a href="#info" class="menu__link">Контакты</a>
+            <a href="#info" class="menu__link js-scroll-el">Контакты</a>
           </div>
           <div class="menu__item">
-            <a href="#reviews" class="menu__link">Отзывы</a>
+            <a href="#reviews" class="menu__link js-scroll-el">Отзывы</a>
           </div>
         </div>
       </div>
-      <a href="http://www.cpobr.ru/" class="header__logo" target="_blank">
+      <div href="#" class="header__logo">
         <img src="./img/logo.png">
-      </a>
+      </div>
       <div class="header__phone">
         <a href="tel:74959918747" class="header__phone-link">+ 7 495 991-87-47</a>
       </div>
@@ -53,12 +53,12 @@
         <div class="first__form form">
           <h2 class="form__title">Закажите тестовый перевод бесплатно!</h2>
           <form class="form__wrapper" method="POST" action="test.php">
-            <input class="form__name form__item" name="name" type="text" placeholder="Имя" required>
-            <input class="form__mail form__item" name="email" type="text" placeholder="E-mail" required>
-            <input class="form__phone form__item" name="phone" type="text" placeholder="Телефон" required>
+            <input class="form__name form__item js-name-input" name="name" type="text" placeholder="Имя" required>
+            <input class="form__mail form__item js-email-input" name="email" type="email" placeholder="E-mail" required>
+            <input class="form__phone form__item js-phone-input" name="phone" type="tel" placeholder="Телефон" required>
             <input class="form__submit form__item" type="submit" value="Заказать">
             <div class="form__checkbox">
-              <input id="isAgree" class="form__input" checked="checked" name="agree" type="checkbox" required>
+              <input id="isAgree" class="form__input js-agreed-input" checked="checked" name="agree" type="checkbox" required>
               <label for="isAgree" class="form__label">Я даю согласие на обработку моих персональных данных</label>
             </div>
           </form>
@@ -111,9 +111,9 @@
       <div class="services__form">
         <h3 class="form__title form__title--services">Заказать услугу</h3>
         <form class="form__wrapper" method="POST" action="test.php">
-          <input class="form__name form__item" name="name" type="text" placeholder="Имя" required>
-          <input class="form__mail form__item" name="email" type="text" placeholder="E-mail" required>
-          <input class="form__phone form__item" name="phone" type="text" placeholder="Телефон" required>
+          <input class="form__name form__item js-name-input" name="name" type="text" placeholder="Имя" required>
+          <input class="form__mail form__item js-email-input" name="email" type="email" placeholder="E-mail" required>
+          <input class="form__phone form__item js-phone-input" name="phone" type="tel" placeholder="Телефон" required>
           <input class="form__submit form__submit--services form__item" type="submit" value="Заказать">
         </form>
       </div>
@@ -143,9 +143,9 @@
         <div class="about__form">
           <h3 class="form__title">Получить бесплатную консультацию </h3>
           <form class="form__wrapper" method="POST" action="test.php">
-            <input class="form__name form__item" name="name" type="text" placeholder="Имя" required>
-            <input class="form__mail form__item" name="email" type="text" placeholder="E-mail" required>
-            <input class="form__phone form__item" name="phone" type="text" placeholder="Телефон" required>
+            <input class="form__name form__item js-name-input" name="name" type="text" placeholder="Имя" required>
+            <input class="form__mail form__item js-email-input" name="email" type="email" placeholder="E-mail" required>
+            <input class="form__phone form__item js-phone-input" name="phone" type="tel" placeholder="Телефон" required>
             <input class="form__submit form__item" type="submit" value="Заказать">
           </form>
         </div>
@@ -161,7 +161,7 @@
             <div class="guarantees__item">Хорошую цену</div>
             <div class="guarantees__item">Соблюдение сроков</div>
           </div>
-          <button class="guarantees__button" type="button">Заказать</button>
+          <button class="guarantees__button js-button" type="button" data-href="#last-form">Заказать</button>
         </div>
       </div>
     </section>
@@ -216,9 +216,9 @@
             </tr>
             <tr>
               <th class="table-left-th"></th>
-              <td class="table-one-td table-button"><button>Заказать перевод</button></td>
-              <td class="table-middle table-button"><button>Заказать перевод</button></td>
-              <td class="table-last table-button"><button>Заказать перевод</button></td>
+              <td class="table-one-td table-button"><button class="js-button" data-href="#last-form" data-price="от 1.2р. за слово" type="button">Заказать перевод</button></td>
+              <td class="table-middle table-button"><button class="js-button" data-href="#last-form" data-price="от 1.9р. за слово" type="button">Заказать перевод</button></td>
+              <td class="table-last table-button"><button class="js-button" data-href="#last-form" data-price="от 2.8р. за слово" type="button">Заказать перевод</button></td>
             </tr>
           </tbody>
         </table>
@@ -255,17 +255,18 @@
       <div class="last-form__cont wrapper">
         <h2 class="last-form__title">Отправьте заявку с вашим документом и получите расчет</h2>
         <form class="last-form__wrapper" method="POST" action="test.php">
-          <input class="last-form__name last-form__item" name="name" type="text" placeholder="Имя" required>
-          <input class="last-form__mail last-form__item" name="email" type="text" placeholder="E-mail" required>
-          <input class="last-form__phone last-form__item" name="phone" type="text" placeholder="Телефон" required>
+          <input class="last-form__value js-value js-value-input" name="value" type="hidden">
+          <input class="last-form__name last-form__item js-name-input" name="name" type="text" placeholder="Имя" required>
+          <input class="last-form__mail last-form__item js-email-input" name="email" type="email" placeholder="E-mail" required>
+          <input class="last-form__phone last-form__item js-phone-input" name="phone" type="tel" placeholder="Телефон" required>
 
-          <label for="file" class="last-form__file last-form__item">Загрузить файл
-            <input class="last-form__file-input" name="file" required id="file" type="file" >
+          <label for="file" class="last-form__file last-form__item"><span class="js-file-label last-form__file-label">Загрузить файл</span>
+            <input class="last-form__file-input js-file-input" name="file" required id="file" type="file" >
           </label>
 
           <input class="last-form__submit last-form__item" type="submit" value="Отправить">
           <div class="last-form__checkbox">
-            <input id="isAgree" class="last-form__input" checked="checked" name="agree" type="checkbox" required>
+            <input id="isAgree" class="last-form__input js-agreed-input" checked="checked" name="agree" type="checkbox" required>
             <label for="isAgree" class="last-form__label">Я даю согласие на обработку моих персональных данных</label>
           </div>
         </form>
@@ -290,18 +291,18 @@
   <footer class="footer">
     <div class="wrapper">
       <div class="footer__row">
-        <a href="http://www.cpobr.ru/" class="footer__logo" target="_blank"><img src="./img/footer__logo.png" alt=""></a>
+        <a href="#header" class="footer__logo js-scroll-el"><img src="./img/footer__logo.png" alt=""></a>
         <div class="footer__contacts">
           <div class="footer__contacts-title">
             Бюро переводов «ТехноПрогресс»
           </div>
           <a href="tel:74959918747" class="footer__contacts-phone">+7 (495) 991-87-47</a>
-          <div class="footer__contacts-link">
-            <a href="https://www.vk.com/" class="footer__contacts-link-vk target="_blank">
+          <div class="footer__contacts-link-wrapper">
+            <a href="https://www.vk.com/" class="footer__contacts-link footer__contacts-link--vk" target="_blank">
             </a>
-            <a href="https://www.facebook.com/tehnoprogress/" class="footer__contacts-link-fb target="_blank">
+            <a href="https://www.facebook.com/tehnoprogress/" class="footer__contacts-link footer__contacts-link--fb" target="_blank">
             </a>
-            <a href="https://www.youtube.com/user/TechnoProgress/" class="footer__contacts-link-yt target="_blank">
+            <a href="https://www.youtube.com/user/TechnoProgress/" class="footer__contacts-link footer__contacts-link--yt" target="_blank">
             </a>
           </div>
         </div>
@@ -310,15 +311,16 @@
   </footer>
   <div class="modal fade">
     <div class="modal__wrapper">
-      <div class="modal__wrapper-close modal-close">+</div>
+      <div class="modal__wrapper-close modal-close">Закрыть</div>
       <h3 class="modal__title">
-        Спасибо, <br/>Ваша заявка принята!
+        Ваша заявка отправлена!
       </h3>
+      <div class="modal__text">
+        Спасибо за доверие к нашей компании! Вам перезвонят наши менеджеры в течении нескольких минут.
+      </div>
       <div class="modal__back modal-close">Вернуться на главную</div>
     </div>
   </div>
-
-
   <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="

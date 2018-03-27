@@ -686,6 +686,20 @@ body {
   background: url(../img/icon-6.png) center no-repeat, linear-gradient(124deg, #a12d47 0%, #20205c 100%);
 }
 
+.services__info-item:hover:before {
+  -webkit-animation-name: shake;
+  animation-name: shake;
+  -webkit-animation-duration: 0.8s;
+  animation-duration: 0.8s;
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+
 .services__form {
   width: 1030px;
   height: 185px;
@@ -953,9 +967,7 @@ body {
   position: absolute;
   left: 34px;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  margin-top: -32px;
   background: url(../img/icon-ww.png) center no-repeat;
 }
 
@@ -963,6 +975,20 @@ body {
   color: black;
   font-size: 14px;
   font-weight: 400;
+}
+
+.rate__info:hover:before {
+  -webkit-animation-name: shake;
+  animation-name: shake;
+  -webkit-animation-duration: 0.8s;
+  animation-duration: 0.8s;
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
 }
 
 .table-left-th {
@@ -1303,17 +1329,31 @@ body {
   border-radius: 19px;
 }
 
+.last-form__value {
+  display: none;
+}
+
 .last-form__file {
   background-color: #412357;
   color: white;
   cursor: pointer;
   border: none;
-  padding-left: 24px;
+  padding-left: 34px;
+  padding-right: 10px;
   padding-top: 9px;
   position: relative;
+  text-align: left;
   -webkit-transition: opacity 0.3s ease-in-out;
   -o-transition: opacity 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out;
+}
+
+.last-form__file-label {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
 }
 
 .last-form__file:before {
@@ -1429,6 +1469,20 @@ body {
   background: url(../img/phone.png) center no-repeat;
 }
 
+.info__phone:hover::before {
+  -webkit-animation-name: shake;
+  animation-name: shake;
+  -webkit-animation-duration: 0.8s;
+  animation-duration: 0.8s;
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+
 .info__phone-link {
   color: #262626;
   font-size: 20px;
@@ -1478,6 +1532,20 @@ body {
   left: 3px;
   top: -6px;
   background: url(../img/maps-icon.png) center no-repeat;
+}
+
+.info__adress:hover::before {
+  -webkit-animation-name: shake;
+  animation-name: shake;
+  -webkit-animation-duration: 0.8s;
+  animation-duration: 0.8s;
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
 }
 
 .footer {
@@ -1535,22 +1603,6 @@ body {
 }
 
 .footer__contacts-link {
-  margin-top: 13px;
-}
-
-.footer__contacts-link-vk {
-  background: url(../img/vk.png) center no-repeat;
-}
-
-.footer__contacts-link-fb {
-  background: url(../img/fb.png) center no-repeat;
-}
-
-.footer__contacts-link-yt {
-  background: url(../img/yout.png) center no-repeat;
-}
-
-.footer__contacts-link a {
   display: inline-block;
   width: 27px;
   height: 26px;
@@ -1560,8 +1612,25 @@ body {
   transition: opacity 0.3s ease-in-out;
 }
 
-.footer__contacts-link a:hover {
+.footer__contacts-link-wrapper {
+  margin-top: 13px;
+}
+
+.footer__contacts-link:hover {
   opacity: .6;
+}
+
+.footer__contacts-link--vk {
+  display: none;
+  background: url(../img/vk.png) center no-repeat;
+}
+
+.footer__contacts-link--fb {
+  background: url(../img/fb.png) center no-repeat;
+}
+
+.footer__contacts-link--yt {
+  background: url(../img/yout.png) center no-repeat;
 }
 
 @supports (-webkit-text-fill-color: transparent) {
@@ -1618,19 +1687,17 @@ body {
 }
 
 .modal__wrapper-close {
-  font-size: 42px;
-  line-height: 26px;
-  font-weight: 300;
   display: block;
+  text-indent: -999999px;
   width: 24px;
   height: 24px;
   position: absolute;
-  color: rgba(0, 0, 0, 0.7);
+  background: url(../img/close.svg) center no-repeat;
   right: 12px;
   top: 12px;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
   cursor: pointer;
   -webkit-transition: -webkit-transform 0.3s ease-in-out;
   transition: -webkit-transform 0.3s ease-in-out;
@@ -1640,31 +1707,56 @@ body {
 }
 
 .modal__wrapper-close:hover {
-  -webkit-transform: rotate(315deg);
-  -ms-transform: rotate(315deg);
-  transform: rotate(315deg);
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .modal__title {
-  line-height: 48px;
-  font-size: 42px;
-  font-weight: 300;
+  line-height: 42px;
+  font-size: 38px;
+  font-weight: 500;
   text-align: center;
   color: #000;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.modal__text {
+  max-width: 450px;
+  margin-top: 20px;
+  font-size: 20px;
 }
 
 .modal__back {
-  font-size: 24px;
-  font-weight: 300;
+  font-size: 16px;
+  font-weight: 400;
   text-align: center;
   color: #000;
-  margin: 30px auto 10px;
-  display: inline-block;
+  margin: 30px auto 0;
   cursor: pointer;
+  display: inline-block;
+  position: relative;
 }
 
-.modal__back:hover {
-  text-decoration: underline;
+.modal__back:before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: #000;
+  -webkit-transition: width 0.3s ease-in-out;
+  -o-transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
+}
+
+.modal__back:hover::before {
+  width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

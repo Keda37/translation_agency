@@ -1,123 +1,74 @@
-function validateEmail(email) {
-	var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-	return re.test(email);
-}
-
-function isValid($item) {
-	switch ($item.attr('type')) {
-		case 'text':
-		if ($item.attr('name') === 'email') {
-			return !!$item.val() && validateEmail($item.val());
-		}
-		return !!$item.val() && !!$.trim($item.val());
-		case 'checkbox':
-		return !!$item.is(':checked');
-		default:
-		return false;
-	}
-}
-
-function toggleClass($item, className, condition) {
-	condition = typeof condition !== 'undefined' ? condition : true;
-	switch ($item.attr('type')) {
-		case 'checkbox':
-		$item.parent().toggleClass(className, condition);
-		break;
-		default:
-		$item.toggleClass(className, condition);
-		break;
-	}
-}
-
-function checkRequired($form, show_all_errors, $current_item) {
-	show_all_errors = typeof show_all_errors !== 'undefined' ? show_all_errors : false;
-	$current_item = typeof $current_item !== 'undefined' ? $current_item : $({});
-
-	var $required = $form.find('.form-input.required');
-	var result = true, error_class = 'has-error';
-	$required.each(function (index, item) {
-		var $item = $(item);
-		var is_valid = isValid($item);
-		if (show_all_errors || $current_item.is($item)) {
-			toggleClass($item, error_class, !is_valid);
-		}
-		result = result && is_valid;
-	});
-
-	var $submit_button = $form.find('.submit-request-button');
-	$submit_button.toggleClass('disabled', !result);
-	$submit_button.prop('disabled', !result);
-
-	return result;
-}
-
 $(function () {
-	// Scroll down to anchor
-	$('.form-button').click(function () {
-		$('html,body').animate({scrollTop: $('#new').offset().top + "px"}, {duration: 1E3});
+
+	// скролл у меню
+	$('.js-scroll-el').click(function () {
+		var scrollToElement = $(this).attr('href');
+		$('html,body').animate({scrollTop:$(scrollToElement).offset().top+"px"},{duration:1E3});
 	});
 
-	$('#requestForm').data('callback', function () {
-		$('#requestForm').addClass('true');
+	// переход с кнопок 
+
+	$('.js-button').click(function () {
+		var scrollToElement = $(this).attr('data-href');
+		$('html,body').animate({scrollTop:$(scrollToElement).offset().top+"px"},{duration:1E3});
+
+		// если был переход с таблицы, то добавляем значение в скрытое поле для отправки формы
+		if ($(this).attr('data-price')) {
+			$('.js-value').val($(this).attr('data-price'));
+		} else {
+			$('.js-value').val('');
+		}
 	});
 
-	$('form').on('submit', function (event) {
+	// отправка форм
+	$('form').submit(function(event) {
 		event.preventDefault();
 
 		var $form = $(this),
-		$submit_button = $form.find('.submit-request-button'),
-		isDisabled = $submit_button.hasClass('disabled');
+		$name = $form.find('.js-name-input').val(),
+		$phone = $form.find('.js-phone-input').val(),
+		$email = $form.find('.js-email-input').val(),
+		$is_agreed = $form.find('.js-agreed-input').is(':checked') || 'not-info';
+		$file = $form.find('.js-file-input').val() || 'not-info';
+		$valueprice = $form.find('.js-value-input').val() || 'not-info';
+		$.ajax({
+			method: 'post',
+			url: $form.attr('action'),
+			data: {
+				name: $name,
+				phone: $phone,
+				email: $email,
+				price: $valueprice,
+				file: $file,
+				is_agreed: $is_agreed
+			},
 
-		if (!isDisabled && checkRequired($form, true)) {
-			$submit_button.addClass('disabled');
-			$submit_button.prop('disabled', true);
-
-			var name = $form.find('.name-input').val(),
-			phone = $form.find('.phone-input').val(),
-			email = $form.find('.email-input').val(),
-			is_agreed = $form.find('#participateAgree').is(':checked')
-
-			$.ajax({
-				method: 'post',
-				url: $form.attr('action'),
-				data: {
-					name: name,
-					phone: phone,
-					email: email,
-					is_agreed: is_agreed
-				},
-				success: function () {
-
-					$('.modal').addClass('active');
-					setTimeout(function () {
-						$('.modal').addClass('in');
-					}, 100);
-					$('.submit-request-button').val('Ваша заявка отправлена');
-					
-//					if (yaCounter34970585 && $form.data('goal')) {
-//						yaCounter34970585.reachGoal($form.data('goal'));
-//					}
-$form.addClass('sent');
-var callback = $form.data('callback');
-if (callback) {
-	callback();
-}
-}
-})
-		}
+			success: function () {
+				console.log($name, $phone, $email, $is_agreed, $file, $valueprice);
+				$('.modal').addClass('active').hide().fadeIn(300);
+			}
+		});
 	});
 
-	$('.form-text').on('input', function () {
-		checkRequired($(this).closest('form'), false, $(this));
+// закрытие формы
+$('.modal-close').click(function() {
+	$('.modal').fadeOut(300, function() {
+		$('.modal').removeClass('active');
 	});
+});
 
-	$('.form-checkbox').on('change', function () {
-		checkRequired($(this).closest('form'), false, $(this));
-	});
-	$('.modal-close').click(function() {
-		$('.modal').removeClass('in');
-		setTimeout(function () {
-			$('.modal').removeClass('active');
-		}, 250);
-	});
+$(document).mouseup(function (e){ // событие клика по веб-документу
+    var div = $(".modal__wrapper"); // тут указываем элемента
+        if (!div.is(e.target) && div.has(e.target).length === 0 && div.is(':visible')) { // и не по его дочерним элементам
+        	$('.modal').fadeOut(300, function() {
+        		$('.modal').removeClass('active');
+        	});
+        }
+      });
+
+
+// добавление имени файла при загрузке в форму
+$('.js-file-input').on('change', function() {
+    $('.js-file-label').text(this.files[0].name);
+});
 });
