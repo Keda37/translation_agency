@@ -33,6 +33,112 @@
   src: local("ALS Rubl"), url("../fonts/rouble.woff") format("woff");
 }
 
+/* Slider */
+.slick-slider {
+  position: relative;
+  display: block;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.slick-list:focus {
+  outline: none;
+}
+
+.slick-list.dragging {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.slick-track:before, .slick-track:after {
+  content: "";
+  display: table;
+}
+
+.slick-track:after {
+  clear: both;
+}
+
+.slick-loading .slick-track {
+  visibility: hidden;
+}
+
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  display: none;
+}
+
+[dir="rtl"] .slick-slide {
+  float: right;
+}
+
+.slick-slide img {
+  display: block;
+}
+
+.slick-slide.slick-loading img {
+  display: none;
+}
+
+.slick-slide.dragging img {
+  pointer-events: none;
+}
+
+.slick-initialized .slick-slide {
+  display: block;
+}
+
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
+}
+
+.slick-arrow.slick-hidden {
+  display: none;
+}
+
 @-webkit-keyframes shake {
   0% {
     transform:scale(1) {
@@ -1173,6 +1279,7 @@ body {
   margin-left: 15px;
   margin-right: 15px;
   height: 60px;
+  outline: none;
 }
 
 .reviews__logo-item img {
@@ -1186,42 +1293,8 @@ body {
   padding-left: 150px;
   padding-right: 150px;
   padding-top: 80px;
-  padding-bottom: 80px;
+  padding-bottom: 40px;
   position: relative;
-}
-
-.reviews__left {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 170px;
-  background: url("../img/arr-l.png") center no-repeat;
-  cursor: pointer;
-  -webkit-transition: opacity 0.3s ease-in-out;
-  -o-transition: opacity 0.3s ease-in-out;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.reviews__left:hover {
-  opacity: .3;
-}
-
-.reviews__right {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 170px;
-  background: url("../img/arr-r.png") center no-repeat;
-  cursor: pointer;
-  -webkit-transition: opacity 0.3s ease-in-out;
-  -o-transition: opacity 0.3s ease-in-out;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.reviews__right:hover {
-  opacity: .3;
 }
 
 .reviews__item {
@@ -1230,6 +1303,8 @@ body {
   color: white;
   font-size: 14px;
   font-weight: 300;
+  margin-bottom: 40px;
+  outline: thin;
 }
 
 .reviews__item:before {
@@ -1757,6 +1832,68 @@ body {
 
 .modal__back:hover::before {
   width: 100%;
+}
+
+.reviews__logo-item {
+  opacity: 0.5;
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.reviews__logo-item.slick-current {
+  opacity: 1;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.reviews__logo-item.slick-current img {
+  -webkit-filter: drop-shadow(1px 0px 0px #fff);
+  filter: drop-shadow(1px 0px 0px #fff);
+}
+
+.slick-prev {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 170px;
+  background: url("../img/arr-l.png") center no-repeat;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+  text-indent: -9999px;
+}
+
+.slick-prev:hover {
+  opacity: .3;
+}
+
+.slick-next {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 170px;
+  background: url("../img/arr-r.png") center no-repeat;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+  text-indent: -9999px;
+}
+
+.slick-next:hover {
+  opacity: .3;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -71,4 +71,25 @@ $(document).mouseup(function (e){ // событие клика по веб-до�
 $('.js-file-input').on('change', function() {
     $('.js-file-label').text(this.files[0].name);
 });
+
+
+$('.js-reviews__logo-slider').slick({
+  slidesToShow: 6,
+  arrows: false,
+  asNavFor: '.js-reviews__slider',
+  focusOnSelect: true,
+});
+$('.js-reviews__slider').slick({
+  infinite: true,
+  slidesToShow: 1,
+  arrows: true,
+  asNavFor: '.js-reviews__logo-slider',
+  fade: true,
+  cssEase: 'linear'
+});
+
+
+
+
+
 });
