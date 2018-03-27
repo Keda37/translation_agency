@@ -90,8 +90,6 @@ $('.js-slide-button').click(function() {
 	var currentSlide = $('.js-reviews__slider').slick('slickCurrentSlide');
 	var slideCounter = $(this).attr('data-slide');
 	if (currentSlide != slideCounter) {
-		$('[data-slide]').removeClass('active-slide');
-		$(this).addClass('active-slide');
 		$('.js-reviews__slider').slick('slickGoTo', slideCounter, false);
 	}
 
