@@ -20,35 +20,42 @@ $(function () {
 		}
 	});
 
-	// отправка форм
-	$('form').submit(function(event) {
-		event.preventDefault();
+//	отправка форм
+$('form').submit(function(event) {
+	event.preventDefault();
 
-		var $form = $(this),
-		$name = $form.find('.js-name-input').val(),
-		$phone = $form.find('.js-phone-input').val(),
-		$email = $form.find('.js-email-input').val(),
-		$is_agreed = $form.find('.js-agreed-input').is(':checked') || 'not-info';
-		$file = $form.find('.js-file-input').val() || 'not-info';
-		$valueprice = $form.find('.js-value-input').val() || 'not-info';
-		$.ajax({
-			method: 'post',
-			url: $form.attr('action'),
-			data: {
-				name: $name,
-				phone: $phone,
-				email: $email,
-				price: $valueprice,
-				file: $file,
-				is_agreed: $is_agreed
-			},
+	var $form = $(this),
+	$name = $form.find('.js-name-input').val(),
+	$phone = $form.find('.js-phone-input').val(),
+	$email = $form.find('.js-email-input').val(),
+	$is_agreed = $form.find('.js-agreed-input').is(':checked') || 'not-info',
+	$valueprice = $form.find('.js-value-input').val() || 'not-info',
+	$file_data = $('.js-file-input').prop('files')[0] || 'not-info',
+	$form_data = new FormData();
+	$form_data.append('name', $name);
+	$form_data.append('phone', $phone);
+	$form_data.append('email', $email);
+	$form_data.append('agreed', $is_agreed);
+	$form_data.append('price', $valueprice);
+	$form_data.append('file', $file_data);
 
-			success: function () {
-				console.log($name, $phone, $email, $is_agreed, $file, $valueprice);
-				$('.modal').addClass('active').hide().fadeIn(300);
-			}
-		});
-	});
+$.ajax({
+	method: 'post',
+	url: $form.attr('action'),
+	dataType: 'text',
+	cache: false,
+	contentType: false,
+	processData: false,
+	data: $form_data,
+
+	success: function () {
+		$('.modal').addClass('active').hide().fadeIn(300);
+	}
+});
+});
+
+
+
 
 // закрытие формы
 $('.modal-close').click(function() {
