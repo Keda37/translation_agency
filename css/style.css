@@ -1317,6 +1317,7 @@ body {
 
 .reviews__text {
   min-height: 48px;
+  overflow: hidden;
 }
 
 .reviews__name {
