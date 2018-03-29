@@ -1848,7 +1848,7 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
-.reviews__logo-item.active-slide {
+.reviews__logo-item.slick-center.slick-active {
   opacity: 1;
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
@@ -1856,7 +1856,7 @@ body {
   cursor: default;
 }
 
-.reviews__logo-item.active-slide img {
+.reviews__logo-item.slick-center.slick-active img {
   -webkit-filter: drop-shadow(1px 0px 0px #fff);
   filter: drop-shadow(1px 0px 0px #fff);
 }

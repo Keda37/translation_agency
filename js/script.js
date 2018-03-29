@@ -80,28 +80,24 @@ $('.js-file-input').on('change', function() {
 });
 
 
-$('.js-reviews__slider').slick({
-	infinite: false,
+$('.js-reviews__logo-slider').slick({
 	slidesToShow: 1,
+  arrows: false,
+  asNavFor: '.js-reviews__slider',
+  focusOnSelect: true,
+  variableWidth: true,
+  centerMode: true
+});
+
+$('.js-reviews__slider').slick({
+	infinite: true,
+	slidesToShow: 1,
+	slidesToScroll: 1,
 	arrows: true,
 	fade: true,
 	cssEase: 'linear',
+	asNavFor: '.js-reviews__logo-slider',
 });
-
-$('.js-reviews__slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-	$('[data-slide]').removeClass('active-slide');
-	$('[data-slide=' + nextSlide + ']').addClass('active-slide');
-});
-
-$('.js-slide-button').click(function() {
-	var currentSlide = $('.js-reviews__slider').slick('slickCurrentSlide');
-	var slideCounter = $(this).attr('data-slide');
-	if (currentSlide != slideCounter) {
-		$('.js-reviews__slider').slick('slickGoTo', slideCounter, false);
-	}
-
-});
-
 
 
 });
