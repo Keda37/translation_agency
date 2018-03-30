@@ -332,9 +332,9 @@ body {
   margin: 0;
   padding: 0;
   opacity: 0;
-  -webkit-transform: translate(-50px, -100px) scale(0.3);
-  -ms-transform: translate(-50px, -100px) scale(0.3);
-  transform: translate(-50px, -100px) scale(0.3);
+  -webkit-transform: translateY(-50px);
+  -ms-transform: translateY(-50px);
+  transform: translateY(-50px);
   -webkit-transition: .5s ease-in-out;
   -o-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
@@ -389,9 +389,9 @@ body {
 .menu input:checked ~ .menu__ul {
   display: block;
   opacity: 1;
-  -webkit-transform: translate(0, 0) scale(1, 1);
-  -ms-transform: translate(0, 0) scale(1, 1);
-  transform: translate(0, 0) scale(1, 1);
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
   visibility: visible;
 }
 
